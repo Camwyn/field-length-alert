@@ -7,9 +7,9 @@
 
 	Allthethings:
 	window.TenUp.fieldLengthAlert( {
-		target: '#title', // ID of field container
-		error_threshold: 65,
-		warn_threshold: 55
+		target: ['#title', '.newtag']
+		error_threshold: 55,
+		warn_threshold: 45
 	}, function() {
 		console.log( 'Amazing callback function!' );
 	} );
@@ -175,35 +175,32 @@
 		}
 	};
 
-	// @TODO: These examples here for testing
+	/* @NOTE: These examples here for testing
 	document.addEventListener( 'DOMContentLoaded', function() {
-		/* Basic - ID
+		// Basic - ID
 		window.TenUp.fieldLengthAlert( '#title' );
-		*/
 
 
-		/* Less Basic - by type (this is crazy, don't do this in production!)
+		// Less Basic - by type (this is crazy, don't do this in production!)
 		window.TenUp.fieldLengthAlert( 'input[type=text]' );
-		*/
 
-		/* Passing an array of selectors */
+
+		// Passing an array of selectors
 		window.TenUp.fieldLengthAlert( {
 			target: ['#title', '.newtag'], // array of fields
 			error_threshold: 55,
 			warn_threshold: 45
 		} );
 
-
-		/* Allthethings
+		// Allthethings
 		window.TenUp.fieldLengthAlert( {
-			target: '#title', // ID of field
+			target: ['#title', '.newtag']
 			error_threshold: 55,
 			warn_threshold: 45
 		}, function() {
 			console.log( 'Amazing callback function!' );
 		} );
-		*/
-
 	} );
+	*/
 
 } )();

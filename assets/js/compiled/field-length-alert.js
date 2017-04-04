@@ -32,7 +32,22 @@
 			for ( var i = 0, imax = array.length; i < imax; i++ ) {
 				callback.call( scope, i, array[i] ); // passes back stuff we need
 			}
-		};
+		},
+		acceptedTypes = [
+			'text',
+			'textarea'
+		];
+
+	// Rules out non-inputs and ones that don't make sense to limit.
+	function isLimitable( input ) {
+		if ( input.tagName === 'INPUT' ) {
+			if ( acceptedTypes.indexOf( input.type ) > -1 ) {
+				return true;
+			}
+		}
+
+		return false;
+	}
 
 	window.TenUp.fieldLengthAlert = function( options, callback ) {
 		if ( 'undefined' === typeof options ) {
@@ -63,7 +78,6 @@
 		alertIndex++;
 
 		function update_title_count( field, spanWrap, options ) {
-
 			// set some defaults
 			var warnThreshold  = options.warn_threshold || 55,
 				errorThreshold = options.error_threshold || 65,
@@ -109,6 +123,11 @@
 				alertNode    = document.createElement( 'span' ),
 				countNode    = document.createElement( 'span' );
 
+				// Make sure it makes sense to limit this element
+			if ( ! isLimitable( field ) ) {
+				return;
+			}
+
 			alertNode.classList.add( 'field-length-alert' );
 			countNode.classList.add( 'field-length-alert-count' );
 			alertNode.appendChild( countNode );
@@ -149,9 +168,13 @@
 		}
 	};
 
-	// @TODO: This is here for testing
-	document.addEventListener( 'DOMContentLoaded', function() {
-		/* Basic
+	// @TODO: These examples here for testing
+	// document.addEventListener( 'DOMContentLoaded', function() {
+		/* Basic - ID
+		window.TenUp.fieldLengthAlert( '#title' );
+		*/
+
+		/* Basic - class
 		window.TenUp.fieldLengthAlert( '#title' );
 		*/
 
@@ -165,13 +188,15 @@
 		} );
 		*/
 
+		/* Passing an array of selectors
 		window.TenUp.fieldLengthAlert( {
-			target: ['#title', '#mayo_link_url'], // IDs of field containers
+			target: ['#title', '#link_url'], // IDs of field containers
 			error_threshold: 55,
 			warn_threshold: 45
 		} );
+		*/
 
-	} );
+	// } );
 
 } )();
 

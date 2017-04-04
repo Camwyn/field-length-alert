@@ -31,7 +31,7 @@ _ Note: the default counts are arbitrary and easily overridden in the call. _
 
 | Option | Type | Default | Description|
 | ------ | ---- | ----------- |
-| target | string | _null_ | The css target used to find the fields. Can accept classes, IDs, etc. Uses `document.querySelectorAll()` and iterates through all instances. |
+| target | string, array | _null_ | The css target used to find the fields. Can accept classes, IDs, etc. Will bind to all instances on the page. You can also pass an array of selectors and fieldLengthAlert will happily iterate over them all (using the same thresholds and direction, if set) |
 | warn_threshold | int | 65 | The character count at which the `-warn` class should be added to the counter - gives the editor warning that they are approaching the limit. |
 | error_threshold | int | 55 | The character count at which the `-error` class should be added to the counter - this is the "hard" limit. Note this plugin does not prevent a longer entry - just lets the editor know they've exceeded the limit and _stuff may break_&trade; |
 | direction | string | "down" | Whether the counter should count "up" (from zero) or "down" (from limit - default). |
@@ -53,8 +53,9 @@ Note that the default option (`direction: 'down'`) will show a negative number w
 
 Props
 =============
-To [@borkweb](https://github.com/borkweb) for the [original inspiration](https://github.com/borkweb/go-title-length-alert), and the [10up Component Library](https://github.com/10up/wp-component-library) that I modeled some of the initial code structure off.
+[@borkweb](https://github.com/borkweb) for the [original inspiration](https://github.com/borkweb/go-title-length-alert)
+[The 10up Component Library](https://github.com/10up/wp-component-library) that I modeled some of the initial code structure off of.
 
-To [@timwright12](https://github.com/timwright12) for code review and suggestions.
+[@timwright12](https://github.com/timwright12) for code review and suggestions. (passing arrays!)
 
-To [@bengrace](https://github.com/bengrace) and [@McCallumDillon](https://github.com/McCallumDillon) for design insight.
+[@bengrace](https://github.com/bengrace) and [@McCallumDillon](https://github.com/McCallumDillon) for design insight.

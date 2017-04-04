@@ -1,0 +1,29 @@
+---
+env:
+  browser: true
+extends: eslint:recommended
+rules:
+  indent:
+  - 2
+  - tab
+  - SwitchCase: 1
+  no-undefined:
+  - 0
+  linebreak-style:
+  - 2
+  - unix
+  quotes:
+  - 2
+  - single
+  semi:
+  - 2
+  - always
+  space-in-parens:
+  - 2
+  - always
+  no-console:
+  - 1
+  no-alert:
+  - 1
+  camelcase:
+  - 0

@@ -12,7 +12,7 @@ to warn the writer.
 Usage
 =============
 The warn and error threshold settings are set when calling the
-filter like this:
+object like this:
 ```javascript
 window.Camwyn.fieldLengthAlert( {
 	target: '#mayo_link_url', // ID of field container
@@ -27,7 +27,7 @@ window.Camwyn.fieldLengthAlert( {
 Options
 =============
 
-_ Note: the default counts are arbitrary and easily overridden in the call. _
+_Note: the default counts are arbitrary and easily overridden in the call._
 
 Option | Type | Default | Description
 ------ | ---- | ------- | -----------
@@ -56,6 +56,6 @@ Props
 [@borkweb](https://github.com/borkweb) for the [original inspiration](https://github.com/borkweb/go-title-length-alert)
 [The 10up Component Library](https://github.com/10up/wp-component-library) that I modeled some of the initial code structure off of.
 
-[@timwright12](https://github.com/timwright12) for code review and suggestions (passing arrays!) 
+[@timwright12](https://github.com/timwright12) for code review and suggestions (passing arrays!)
 
 [@bengrace](https://github.com/bengrace) and [@McCallumDillon](https://github.com/McCallumDillon) for design insight.

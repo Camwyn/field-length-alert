@@ -3,10 +3,10 @@
 	Usage:
 
 	Basic:
-	window.TenUp.fieldLengthAlert( '#title' );
+	window.Camwyn.fieldLengthAlert( '#title' );
 
 	Allthethings:
-	window.TenUp.fieldLengthAlert( {
+	window.Camwyn.fieldLengthAlert( {
 		target: ['#title', '.newtag']
 		error_threshold: 55,
 		warn_threshold: 45
@@ -18,9 +18,9 @@
 ( function() {
 	'use strict';
 
-	// Define global TenUp object if it doesn't exist
-	if ( 'object' !== typeof window.TenUp ) {
-		window.TenUp = {};
+	// Define global Camwyn object if it doesn't exist
+	if ( 'object' !== typeof window.Camwyn ) {
+		window.Camwyn = {};
 	}
 
 	// This is our global alert index to keep unique ids
@@ -49,7 +49,7 @@
 		return false;
 	}
 
-	window.TenUp.fieldLengthAlert = function( options, callback ) {
+	window.Camwyn.fieldLengthAlert = function( options, callback ) {
 		if ( 'undefined' === typeof options ) {
 			// Bail if we don't have any options
 			return;
@@ -178,22 +178,22 @@
 	/* @NOTE: These examples here for testing
 	document.addEventListener( 'DOMContentLoaded', function() {
 		// Basic - ID
-		window.TenUp.fieldLengthAlert( '#title' );
+		window.Camwyn.fieldLengthAlert( '#title' );
 
 
 		// Less Basic - by type (this is crazy, don't do this in production!)
-		window.TenUp.fieldLengthAlert( 'input[type=text]' );
+		window.Camwyn.fieldLengthAlert( 'input[type=text]' );
 
 
 		// Passing an array of selectors
-		window.TenUp.fieldLengthAlert( {
+		window.Camwyn.fieldLengthAlert( {
 			target: ['#title', '.newtag'], // array of fields
 			error_threshold: 55,
 			warn_threshold: 45
 		} );
 
 		// Allthethings
-		window.TenUp.fieldLengthAlert( {
+		window.Camwyn.fieldLengthAlert( {
 			target: ['#title', '.newtag']
 			error_threshold: 55,
 			warn_threshold: 45

@@ -30,13 +30,19 @@
 	 * Implements the admin_enqueue_scripts action in to add CSS and JS.
 	 */
 	public function admin_enqueue_scripts( $hook_suffix ) {
+		// Would love to use current_screen here, but it fails too often
 		if ( 'post.php' != $hook_suffix && 'post-new.php' != $hook_suffix ) {
 			return; // We're not on post edit admin page, bail.
 		}
 
 		$min = ( defined( 'WP_DEBUG' ) && WP_DEBUG ) ? 'compiled' : 'min';
 
-		wp_register_style( 'field-length-alert', plugins_url( 'assets/css/' . $min . '/field-length-alert.css', __FILE__ ), FALSE, $this->version );
+		wp_register_style(
+			'field-length-alert',
+			plugins_url( 'assets/css/' . $min . '/field-length-alert.css', __FILE__ ),
+			FALSE,
+			$this->version
+		);
 		wp_enqueue_style( 'field-length-alert' );
 
 		wp_register_script(
@@ -47,18 +53,8 @@
 			TRUE
 		);
 		wp_enqueue_script( 'field-length-alert' );
-
-		// pass our configuration to our js
-		wp_localize_script(
-			'field-length-alert',
-			'go_title_length_alert',
-			array(
-				'alert_threshold' => 55,
-				'high_alert_threshold' => 65
-			)
-		);
-	}//END admin_enqueue_scripts
- }//END class
+	}
+ }
 
 
 new fieldLengthAlert();

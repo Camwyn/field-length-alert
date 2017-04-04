@@ -140,7 +140,7 @@
 
 			// Make the span the same width and font size as the input
 			var cs = window.getComputedStyle( field, null );
-			spanWrap.style.width = cs.getPropertyValue( 'width' );
+			spanWrap.style.maxWidth = cs.getPropertyValue( 'width' );
 			alertNode.style.fontSize = cs.fontSize;
 
 			// insert the span - just before the field
@@ -151,6 +151,13 @@
 
 			// append the alert block
 			spanWrap.appendChild( alertNode );
+
+			// this is unlikely, but since we set a max-width..
+			window.onresize = function() {
+				// reset width so responsive fields (like title) stay responsive
+				spanWrap.style.maxWidth = '100%';
+				spanWrap.style.maxWidth = cs.getPropertyValue( 'width' );
+			};
 
 			// add event listener
 			field.addEventListener( 'keyup', function() {
@@ -169,18 +176,27 @@
 	};
 
 	// @TODO: These examples here for testing
-	// document.addEventListener( 'DOMContentLoaded', function() {
+	document.addEventListener( 'DOMContentLoaded', function() {
 		/* Basic - ID
 		window.TenUp.fieldLengthAlert( '#title' );
 		*/
 
-		/* Basic - class
-		window.TenUp.fieldLengthAlert( '#title' );
+
+		/* Less Basic - by type (this is crazy, don't do this in production!)
+		window.TenUp.fieldLengthAlert( 'input[type=text]' );
 		*/
+
+		/* Passing an array of selectors */
+		window.TenUp.fieldLengthAlert( {
+			target: ['#title', '.newtag'], // array of fields
+			error_threshold: 55,
+			warn_threshold: 45
+		} );
+
 
 		/* Allthethings
 		window.TenUp.fieldLengthAlert( {
-			target: '#title', // ID of field container
+			target: '#title', // ID of field
 			error_threshold: 55,
 			warn_threshold: 45
 		}, function() {
@@ -188,14 +204,6 @@
 		} );
 		*/
 
-		/* Passing an array of selectors
-		window.TenUp.fieldLengthAlert( {
-			target: ['#title', '#link_url'], // IDs of field containers
-			error_threshold: 55,
-			warn_threshold: 45
-		} );
-		*/
-
-	// } );
+	} );
 
 } )();

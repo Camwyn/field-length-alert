@@ -53,8 +53,8 @@ Note that the default option (`direction: 'down'`) will show a negative number w
 
 Props
 =============
-To @borkweb for the [original inspiration](borkweb/go-title-length-alert), and the [10up Component Library](https://github.com/10up/wp-component-library) for some of the initial code structure.
+To [@borkweb](https://github.com/borkweb) for the [original inspiration](https://github.com/borkweb/go-title-length-alert), and the [10up Component Library](https://github.com/10up/wp-component-library) that I modeled some of the initial code structure off.
 
-To @timwright12 for code review and suggestions.
+To [@timwright12](https://github.com/timwright12) for code review and suggestions.
 
-To @bengrace and @McCallumDillon for design insight.
+To [@bengrace](https://github.com/bengrace) and [@McCallumDillon](https://github.com/McCallumDillon) for design insight.

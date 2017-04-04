@@ -150,7 +150,7 @@
 	};
 
 	// @TODO: This is here for testing
-	document.addEventListener( 'DOMContentLoaded', function() {
+	// document.addEventListener( 'DOMContentLoaded', function() {
 		/* Basic
 		window.TenUp.fieldLengthAlert( '#title' );
 		*/
@@ -165,12 +165,14 @@
 		} );
 		*/
 
+		/* Passing an array of selectors
 		window.TenUp.fieldLengthAlert( {
-			target: ['#title', '#mayo_link_url'], // IDs of field containers
+			target: ['#title', '#link_url'], // IDs of field containers
 			error_threshold: 55,
 			warn_threshold: 45
 		} );
+		*/
 
-	} );
+	// } );
 
 } )();

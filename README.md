@@ -14,7 +14,7 @@ Usage
 The warn and error threshold settings are set when calling the
 filter like this:
 ```javascript
-window.TenUp.fieldLengthAlert( {
+window.Camwyn.fieldLengthAlert( {
 	target: '#mayo_link_url', // ID of field container
 	error_threshold: 22, // The character count to change to a error
 	warn_threshold: 18, // The character count to change to a warning
@@ -33,7 +33,7 @@ Option | Type | Default | Description
 ------ | ---- | ------- | -----------
 target | string, array | _null_ | The css target used to find the fields. Can accept classes, IDs, etc. Will bind to all instances on the page. You can also pass an array of selectors and fieldLengthAlert will happily iterate over them all (using the same thresholds and direction, if set)
 warn_threshold | int | 65 | The character count at which the `-warn` class should be added to the counter - gives the editor warning that they are approaching the limit.
-error_threshold | int | 55 | The character count at which the `-error` class should be added to the counter - this is the "hard" limit. Note this plugin does not prevent a longer entry - just lets the editor know they've exceeded the limit and _stuff may break_&trade;
+error_threshold | int | 55 | The character count at which the `-error` class should be added to the counter - this is the "hard" limit. Note this plugin does not prevent a longer entry - just lets the editor know they've exceeded the limit and _stuff may break&trade;_
 direction | string | "down" | Whether the counter should count "up" (from zero) or "down" (from limit - default).
 
 Styles are overridable in the theme and have been kept as simple as possible to allow for such.

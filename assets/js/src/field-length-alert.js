@@ -175,15 +175,13 @@
 		}
 	};
 
-	/* @NOTE: These examples here for testing
+	/* @NOTE: These examples here for testing */
 	document.addEventListener( 'DOMContentLoaded', function() {
 		// Basic - ID
 		window.Camwyn.fieldLengthAlert( '#title' );
-
-
+/*
 		// Less Basic - by type (this is crazy, don't do this in production!)
 		window.Camwyn.fieldLengthAlert( 'input[type=text]' );
-
 
 		// Passing an array of selectors
 		window.Camwyn.fieldLengthAlert( {
@@ -200,7 +198,7 @@
 		}, function() {
 			console.log( 'Amazing callback function!' );
 		} );
+		*/
 	} );
-	*/
 
 } )();

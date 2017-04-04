@@ -159,10 +159,17 @@
 				spanWrap.style.maxWidth = cs.getPropertyValue( 'width' );
 			};
 
-			// add event listener
-			field.addEventListener( 'keyup', function() {
-				update_title_count( field, spanWrap, options );
-			} );
+			// add event listener on focus (this will add it back when removed on blur, below)
+			field.addEventListener( 'focus', function() {
+				field.addEventListener( 'keyup', function() {
+					update_title_count( field, spanWrap, options );
+				}, true );
+			}, true );
+
+			// remove listener on blur (garbage collection)
+			field.addEventListener( 'blur', function() {
+				field.removeEventListener( 'keyup', update_title_count );
+			}, true );
 
 			// update the number once.
 			update_title_count( field, spanWrap, options );

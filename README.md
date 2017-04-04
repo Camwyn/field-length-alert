@@ -56,6 +56,6 @@ Props
 [@borkweb](https://github.com/borkweb) for the [original inspiration](https://github.com/borkweb/go-title-length-alert)
 [The 10up Component Library](https://github.com/10up/wp-component-library) that I modeled some of the initial code structure off of.
 
-[@timwright12](https://github.com/timwright12) for code review and suggestions. (passing arrays!)
+[@timwright12](https://github.com/timwright12) for code review and suggestions (passing arrays!) 
 
 [@bengrace](https://github.com/bengrace) and [@McCallumDillon](https://github.com/McCallumDillon) for design insight.
